@@ -50,4 +50,8 @@ class ApplicationController < Sinatra::Base
     erb :'/users/home'
   end
 
+  get '/materials/new' do
+    erb :'/materials/new'
+  end
+
 end
