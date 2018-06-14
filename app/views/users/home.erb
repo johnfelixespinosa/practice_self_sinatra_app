@@ -5,9 +5,20 @@
 
 <body>
   <h1>Welcome, <%=@user.name%>!</h1><br>
-  <a href="/materials/new">Create new materials list</a><br>
+  <a href="/materials/new">Create NEW Materials List</a><br>
 
-  Show Current materials lists<br>
+  <h1>Current materials lists<br></h1>
+
+  <% @materials.each do |materials|%>
+  <a href="/materials/<%= materials.id %>">Materials <%= materials.id %></a><br>
+  Wood: <%= materials.wood %><br>
+  Brick: <%= materials.brick %><br> 
+  Steel: <%= materials.steel %><br>
+  <h4>You can build
+  <%= (materials.wood.to_i + materials.brick.to_i + materials.steel.to_i) / 10%> Structures </h4>
+
+  <% end %>
+  
   <a href="/sessions/logout">Log Out</a>
 
 

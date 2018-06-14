@@ -47,7 +47,13 @@ class ApplicationController < Sinatra::Base
 
   get '/users/home' do
     @user = User.find(session[:id])
+    @materials = Materials.all
     erb :'/users/home'
+  end
+
+  get '/materials' do #loads index page
+    @materials = Materials.all
+    erb :index
   end
 
   get '/materials/new' do #loads create new recipe form
