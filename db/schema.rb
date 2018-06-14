@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609202116) do
+ActiveRecord::Schema.define(version: 20180614002253) do
+
+  create_table "materials", force: :cascade do |t|
+    t.integer "wood"
+    t.integer "brick"
+    t.integer "steel"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
