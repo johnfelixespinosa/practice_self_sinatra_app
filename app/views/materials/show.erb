@@ -1,0 +1,19 @@
+<DOCTYPE! html>
+<head>
+  
+</head>
+
+<body>
+<h2>You have the following materials<br></h2>
+Wood: <%= @materials.wood %><br>
+Brick <%= @materials.brick %><br>
+Steel <%= @materials.steel %><br>
+
+<h2>You can build this many structures</h2>
+<%= (@materials.wood + @materials.brick + @materials.steel) / 10%><br><br>
+
+<a href="/materials/new">Create another materials list</a><br>
+<a href="/users/home">Return to User Home</a><br>
+
+</body>
+</html>

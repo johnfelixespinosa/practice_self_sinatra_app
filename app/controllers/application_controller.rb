@@ -50,8 +50,18 @@ class ApplicationController < Sinatra::Base
     erb :'/users/home'
   end
 
-  get '/materials/new' do
+  get '/materials/new' do #loads create new recipe form
     erb :'/materials/new'
+  end
+
+  post '/calculate' do  #creates a materials object
+    @materials = Materials.create(params)
+    redirect to "/materials/#{@materials.id}"
+  end
+
+  get '/materials/:id' do  #loads show page
+    @materials = Materials.find_by_id(params[:id])
+    erb :'/materials/show'
   end
 
 end
